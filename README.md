@@ -1,2 +1,2 @@
 # TesteProjetoInter2
-Repositório teste para a aula de Projeto Inter 2 #GoGamers
+Repositório para o site do Projeto Inter 2 #GoGamers
