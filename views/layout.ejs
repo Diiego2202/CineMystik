@@ -5,23 +5,67 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Roboto+Condensed&display=swap" rel="stylesheet">
 
 		<!-- jQuery -->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-		<!-- Bootstrap 4 -->
-			<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
-			<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<!-- Bootstrap 5 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
 		<link rel="stylesheet" href="/public/estilo.css" />
+        <link rel="stylesheet" href="/public/index.css" />
 
 	<title><%=((typeof titulo === "undefined" || !titulo) ? "Projeto" : (titulo + " - Projeto")) %></title>
 
 	<%- defineContent("styles") %>
 </head>
 <body>
+	<input type="checkbox" id="bt_menu">
+    <label for="bt_menu"">&#9776;</label>
+        <nav class="menu">
+            <ul>        
+                <li><a  href= "">ANO</a>
+                    <ul>
+                        <li><a  href= "#">1980-1990</a></li>     
+                        <li><a  href= "#">1991-2000</a></li> 
+                        <li><a  href= "#">2001-2010</a></li> 
+                        <li><a  href= "#">2011-2020</a></li>
+                    </ul>
+                </li>    
+                <li><a  href= "#">GENERO</a> 
+                    <ul>
+                        <li><a  href= "#">TERROR</a></li>     
+                        <li><a  href= "#">AÇÃO</a></li> 
+                        <li><a  href= "#">SUSPENSE</a></li> 
+                        <li><a  href= "#">COMÉDIA</a></li>
+                    </ul>
+                </li>   
+                <li><a  href= "#">NACIONALIDADE</a>
+                    <ul>
+                        <li><a href= "#">BRASILEIRO</a></li>     
+                        <li><a href= "#">ESPANHOL</a></li> 
+                        <li><a href= "#">AMERICANO</a></li> 
+                        <li><a href= "#">JAPONES</a></li>
+                    </ul>
+                </li>   
+                <li><a href= "#">PLATAFORMA</a>
+                    <ul>
+                        <li><a  href= "#">NETFLIX</a></li>     
+                        <li><a  href= "#">AMAZON PRIME</a></li> 
+                        <li><a  href= "#">HBO MAX</a></li> 
+                        <li><a  href= "#">DISNEY PLUS</a></li>
+                    </ul>
+                </li>   
+            </ul>
+
+        </nav>
 	<%- body %>
 
 	<%- defineContent("scripts") %>
+    <script src="/public/js.js"></script>
 </body>
 </html>
