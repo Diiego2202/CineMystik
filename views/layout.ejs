@@ -24,45 +24,27 @@
 	<%- defineContent("styles") %>
 </head>
 <body>
-	<input type="checkbox" id="bt_menu">
-    <label for="bt_menu"">&#9776;</label>
-        <nav class="menu">
-            <ul>        
-                <li><a  href= "">ANO</a>
-                    <ul>
-                        <li><a  href= "#">1980-1990</a></li>     
-                        <li><a  href= "#">1991-2000</a></li> 
-                        <li><a  href= "#">2001-2010</a></li> 
-                        <li><a  href= "#">2011-2020</a></li>
-                    </ul>
-                </li>    
-                <li><a  href= "#">GENERO</a> 
-                    <ul>
-                        <li><a  href= "#">TERROR</a></li>     
-                        <li><a  href= "#">AÇÃO</a></li> 
-                        <li><a  href= "#">SUSPENSE</a></li> 
-                        <li><a  href= "#">COMÉDIA</a></li>
-                    </ul>
-                </li>   
-                <li><a  href= "#">NACIONALIDADE</a>
-                    <ul>
-                        <li><a href= "#">BRASILEIRO</a></li>     
-                        <li><a href= "#">ESPANHOL</a></li> 
-                        <li><a href= "#">AMERICANO</a></li> 
-                        <li><a href= "#">JAPONES</a></li>
-                    </ul>
-                </li>   
-                <li><a href= "#">PLATAFORMA</a>
-                    <ul>
-                        <li><a  href= "#">NETFLIX</a></li>     
-                        <li><a  href= "#">AMAZON PRIME</a></li> 
-                        <li><a  href= "#">HBO MAX</a></li> 
-                        <li><a  href= "#">DISNEY PLUS</a></li>
-                    </ul>
-                </li>   
-            </ul>
-
-        </nav>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Ninth navbar example">
+        <div class="container-xl">
+          <a class="navbar-brand right-50" href="#">LOGO</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarsExample07XL">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link right-50 left-50" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link right-50" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link right-50" href="#">Cadastre-se</a>
+              </li>
+          </div>
+        </div>
+      </nav>
 	<%- body %>
 
 	<%- defineContent("scripts") %>
