@@ -6,7 +6,22 @@ class IndexRoute {
 	}
 
 	public async teste(req: app.Request, res: app.Response) {
-		res.render("index/teste");
+		// Mais para frente iremos melhorar os tipos, para não usar any[] :)
+		let filme: any[];
+
+		await app.sql.connect(async (sql) => {
+
+			// Todas os comandos SQL devem ser executados aqui dentro do app.sql.connect().
+
+			filme = await sql.query("SELECT idFilme, nome, ano, diretor, sinopse, genero, subgenero FROM filme");
+
+		});
+		
+		let opcoes = {
+			filme: filme
+		};
+
+		res.render("index/teste", opcoes);
 	}
 
 	public async flavinho(req: app.Request, res: app.Response) {
