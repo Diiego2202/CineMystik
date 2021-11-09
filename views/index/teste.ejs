@@ -2,39 +2,7 @@
 	FILME DO DIA
 </h1>
 
-<% i = Math.floor((Date.now() - (3 * 60 * 60 * 1000)) / (24 * 60 * 60 * 1000)) % 65 %>
-	<h2>
-		<% filme[i].nome %> 
-	</h2>	
-
-	<p>
-		Ano: <%= filme[i].ano %>
-	</p>
-
-	<p>
-		Diretor: <%= filme[i].diretor %>
-	</p>
-
-    <p>
-		genero: <%= filme[i].genero %>
-	</p>
-
-    <p>
-		subgenero: <%= filme[i].subgenero %>
-	</p>
-
-    <p>
-		sinopse: <%= filme[i].sinopse %>
-	</p>
-
-	<hr />
-
-
-<h1>
-	Lista de filmes cadastradas
-</h1>
-
-<% for (let i = 0; i < filme.length; i++) { %>
+<% i = Math.floor((Date.now() - (3 * 60 * 60 * 1000)) / (24 * 60 * 60 * 1000)) % tot_filmes %>
 <div>
 
 	<h2>
@@ -64,4 +32,26 @@
 	<hr />
 
 </div>
+
+
+<h1>
+	Lista de filmes cadastradas
+</h1>
+
+<div class="container-fluid">
+	<div class="row">
+<% for (let i = 0; i < filme.length; i++) { %>
+	<div class="col-sm-3">
+		<div class="card" style="width: 18rem;">
+			<img class="card-img-top" src="..." alt="Card image cap">
+			<div class="card-body">
+			  <h5 class="card-title"><%= filme[i].nome %></h5>
+			  <p class="card-text"><%= filme[i].sinopse %></p>
+			  <a href="#" class="btn btn-primary">Go somewhere</a>
+			</div>
+		  </div>
+	</div>	
+	
 <% } %>
+	</div>
+</div>
