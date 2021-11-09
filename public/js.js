@@ -20,3 +20,9 @@ function showInfoTVShow(){
         colunaSerie.classList.add("hide");
     }
 }
+
+let titulofilme = document.querySelector("#titulo");
+titulofilme.innerHTML = "titulo do filme";
+let filmedescricao = document.querySelector("#descricao");
+filmedescricao.innerHTML = "descriçao descriçao descriçao descriçao descriçao descriçao descriçao descriçao descriçao descriçao descriçao descriçao descriçao descriçao descriçao descriçao";
+let filmeurl = document.querySelector("#filmeurl");
