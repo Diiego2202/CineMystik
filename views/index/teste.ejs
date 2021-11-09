@@ -1,4 +1,36 @@
 <h1>
+	FILME DO DIA
+</h1>
+
+<% i = Math.floor((Date.now() - (3 * 60 * 60 * 1000)) / (24 * 60 * 60 * 1000)) % 65 %>
+	<h2>
+		<% filme[i].nome %> 
+	</h2>	
+
+	<p>
+		Ano: <%= filme[i].ano %>
+	</p>
+
+	<p>
+		Diretor: <%= filme[i].diretor %>
+	</p>
+
+    <p>
+		genero: <%= filme[i].genero %>
+	</p>
+
+    <p>
+		subgenero: <%= filme[i].subgenero %>
+	</p>
+
+    <p>
+		sinopse: <%= filme[i].sinopse %>
+	</p>
+
+	<hr />
+
+
+<h1>
 	Lista de filmes cadastradas
 </h1>
 
