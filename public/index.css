@@ -23,6 +23,14 @@ body{
     color: white;
 }
 
+<<<<<<< HEAD
+=======
+.filme{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+>>>>>>> 0be3fd390af2d9f069640d9df17554095f579469
 
 .hide{
     display: none;
@@ -46,7 +54,14 @@ body{
 }
 
 .titulo-1{
+    font-size: 4rem;
+    word-spacing: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.titulo-2{
     font-size: 3rem;
+    font-family: 'Bebas Neue', cursive;
 }
 
 .p-1{
@@ -85,12 +100,6 @@ body{
     padding: 50px;
 }
 
-
-.title-small{
-    font-size: 1.2rem;
-    font-family:  'Roboto Condensed', sans-serif;
-}
-
 .margin-top-50{
     margin-top: 50px;
 }
@@ -100,17 +109,6 @@ hr{
     background-color: rgb(129, 0, 0) !important;
     padding: 2px;
     opacity: 1 !important;
-}
-
-.img-round{
-    width: 400px;
-    height: 400px;
-    border-radius: 100%;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%); 
-    max-width: 100%;
-    border: 5px solid white;
 }
 
 .padding-0{
@@ -126,29 +124,12 @@ hr{
     font-weight: 600;
 }
 
-.img-square{
-    width: 450px;
-    height: 450px;
-    border-radius: 10px;
-    max-width: 100%;
-}
-
 .bg-black{
     background-color: black;
 }
 
 .bg-white{
     background-color: white;
-}
-
-.icone{
-    margin-top: 6rem;
-    margin-bottom: 2rem;
-}
-
-.coluna{
-    height: 450px;
-    margin-bottom: 40px;
 }
 
 .contain-1600{
@@ -168,22 +149,6 @@ hr{
     transform: translateY(-50%);
 }
 
-.phone-icon {
-    list-style-image: url('icons8-phone-50.png');
-}
-
-.mail-icon {
-    list-style-image: url('icons8-mail-24.png');
-}
-
-.home-icon {
-    list-style-image: url('icons8-home-30.png');
-}
-
-ul{
-    list-style-type: '> ';
-}
-
 .no-style{
     list-style: none;
 }
@@ -194,10 +159,6 @@ ul{
 
 .left-50{
     margin-left: 50px;
-}
-
-.serie{
-    background-image: url(https://www.nit.pt/wp-content/uploads/2021/09/ad49cfae8b625dd8bbbd0287c8d1b04c.jpeg);
 }
 
 .block{
@@ -211,4 +172,13 @@ ul{
 .random{
     padding: 250px 20px;
     max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+a .hover{
+    color: white !important;
+    text-decoration: none;
 }
