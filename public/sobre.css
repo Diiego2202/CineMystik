@@ -1,4 +1,11 @@
+.centralizar{
+    text-align: center;
+}
 .teste{
     text-align: right;
-    background-color: red;
+    background-color: blue;
+}
+
+body{
+    color: #f0f0f0;
 }

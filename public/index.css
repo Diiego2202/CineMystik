@@ -1,4 +1,19 @@
 /* INICIO CSS INDEX */
+body{
+    background-color: #1a1a1a;
+}
+.menuteste{
+    background-color: #f0f0f0;
+    text-decoration: none;
+    color: black;
+    position: fixed;
+    right: 0;
+    left: 0;
+}
+
+.pd1{
+    padding: 300px;
+}
 
 .header{
     background-image: url(https://cdn.tlc-massive.com/shain/v1/dataservice/ResizeImage/$value?Format=%27png%27&Quality=85&ImageId=%27234319.png%27&ImageUrl=%27234319.png%27&EntityType=%27Item%27&EntityId=%2721151%27&Width=1920&Height=1080&device=web_browser&subscriptions=Anonymous);
