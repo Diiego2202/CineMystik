@@ -16,7 +16,6 @@
 		<!-- Bootstrap 5 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
-		<link rel="stylesheet" href="/public/estilo.css" />
     <link rel="stylesheet" href="/public/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -24,11 +23,12 @@
 
 
 	<title><%=((typeof titulo === "undefined" || !titulo) ? "Projeto" : (titulo + " - Projeto")) %></title>
-
+  
 	<%- defineContent("styles") %>
+
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg menuteste" aria-label="Ninth navbar example" >
+	<nav class="navbar navbar-expand-lg menuteste aria-label="Ninth navbar example" >
         <div class="container-xl">
           <a class="navbar-brand right-50"  href="/"> 
             <img width="250px" src="https://portalsistemax.com.br/wp-content/uploads/logo.png"/>
@@ -41,20 +41,13 @@
 
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link right-50 left-50" href="/" target="blank">Home</a>
+                <a class="nav-link right-50 left-50 letras" href="/" >Home</a>
               </li>
               <li class="nav-item">
-<<<<<<< HEAD
-                <a class="nav-link right-50" href="/sobre" target="blank">About Us</a>
+                <a class="nav-link right-50 letras" href="/sobre">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link right-50" href="#" target="blank">Cadastre-se</a>
-=======
-                <a class="nav-link right-50" href="/about">Sobre nós</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link right-50" href="/galeria">Filmes</a>
->>>>>>> 0be3fd390af2d9f069640d9df17554095f579469
+                <a class="nav-link right-50 letras" href="#">Cadastre-se</a>
               </li>
             </ul> 
           </div>
