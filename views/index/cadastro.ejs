@@ -1,0 +1,42 @@
+<h1>aaaaaa</h1>
+<h1>aaaaaa</h1>
+<h1>aaaaaa</h1>
+<p>Nome:</p>
+<input type="text" id="inputNome" placeholder="Nome">
+<p>Comentário</p>
+<input type="text" id="inputComentario" placeholder="Comentário">
+<p>Nota</p>
+<input type="number" id="inputNota" placeholder="Nota">
+<p>Idfilme</p>
+<input type="number" id="inputIdfilme">
+
+<button type="button" id="botaoAvaliar">Avaliar</button>
+
+<script type="text/javascript">
+    let inputNome = document.getElementById("inputNome");
+    let inputComentario = document.getElementById("inputComentario");
+    let inputNota = document.getElementById("inputNota");
+    let botaoAvaliar = document.getElementById("botaoAvaliar");
+    let inputIdfilme = document.getElementById("inputIdfilme");
+
+    function avaliar(){
+        //let texto = '';
+        let nota = parseInt(inputNota.value);
+        let idfilme = parseInt(inputIdfilme.value);
+        
+        
+        if(isNaN(nota) || nota>5 || nota<0){
+            window.alert("Nota inválida! 0 - 5");
+            return;
+        }
+
+        if(isNaN(idfilme)){
+            window.alert("Id invalido! insira um número!");
+            return;
+        }
+
+
+        window.alert(inputNome.value + '\n' + inputComentario.value + '\n' + inputNota.value);
+    }
+    botaoAvaliar.onclick = avaliar;
+</script>
