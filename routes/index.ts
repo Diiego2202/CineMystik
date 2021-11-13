@@ -14,6 +14,10 @@ class IndexRoute {
 		res.render("index/cadastro");
 	}
 
+	public async homepage(req: app.Request, res: app.Response) {
+		res.render("index/homepage");
+	}
+
 	public async teste(req: app.Request, res: app.Response) {
 		// Mais para frente iremos melhorar os tipos, para não usar any[] :)
 		let filme: any[];
