@@ -18,7 +18,7 @@ class IndexRoute {
 		res.render("index/homepage");
 	}
 
-	public async teste(req: app.Request, res: app.Response) {
+	public async galeria(req: app.Request, res: app.Response) {
 		// Mais para frente iremos melhorar os tipos, para não usar any[] :)
 		let filme: any[];
 
@@ -34,7 +34,7 @@ class IndexRoute {
 			filme: filme
 		};
 
-		res.render("index/teste", opcoes);
+		res.render("index/galeria", opcoes);
 	}
 
 }

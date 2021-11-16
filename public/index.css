@@ -27,6 +27,9 @@ body{
     color: white;
 }
 
+.margin-top-7{
+    margin-top: 7rem;
+}
 
 .hide{
     display: none;
@@ -127,13 +130,6 @@ hr{
 
 .bg-white{
     background-color: white;
-}
-
-.contain-1600{
-    position: relative;
-    max-width: 1600px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .margin-0{

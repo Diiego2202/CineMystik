@@ -5,21 +5,21 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Roboto+Condensed&display=swap" rel="stylesheet">
 
-		<!-- jQuery -->
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<!-- jQuery -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-		<!-- Bootstrap 5 -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/public/index.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/public/index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
 
 	<title><%=((typeof titulo === "undefined" || !titulo) ? "Projeto" : (titulo + " - Projeto")) %></title>
@@ -56,6 +56,40 @@
 	<%- body %>
 
 	<%- defineContent("scripts") %>
+  <div class="bg-dark">
+    <div class="bg-dark color-white padding-50">
+        <div class="container-fluid bg-dark">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h2>NomeDoSite</span></h2>
+                    <p></p>
+                    <ul>
+                        <li class="phone-icon"> >+55 12345-6789</li>
+                        <li class="mail-icon">info@naturelabs.com</li>
+                        <li class="home-icon">380 St</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <h2>Links:</h2>
+                    <ul>
+                        <li>Link</li>
+                        <li>Link</li>
+                        <li>Link</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <h2>Support:</h2>
+                    <ul class="no-style">
+                        <li>Contact Us</li>
+                        <li>Submit a Ticket</li>
+                        <li>Support System</li>
+                    </ul>
+            
+                </div>
+            
+            </div>
+        </div>
+    </div>
     <script src="/public/js.js"></script>
 </body>
 </html>
