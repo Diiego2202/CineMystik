@@ -1,15 +1,14 @@
 	<title>Galeria</title>
     <body>
-      <div class="container-fluid">
+      <div class="container margin-top-7">
         <div class="row">
       <% for (let j = 0; j < filme.length; j++) { %>
         <div class="col-sm-3">
-          <div class="card" style="width: 18rem;">
+          <div class="card img-galeria" style="width: 18rem; height: 18rem;">
             <img class="card-img-top" src="..." alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><%= filme[j].nome %></h5>
-              <p class="card-text"><%= filme[j].sinopse %></p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" class="btn button">SAIBA MAIS</a>
             </div>
             </div>
         </div>	
