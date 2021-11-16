@@ -5,7 +5,7 @@ CREATE DATABASE IF NOT EXISTS cinemystik;
 USE cinemystik;
 
 CREATE TABLE Filme (
-  idFilme INT NOT NULL,
+  idFilme INT NOT NULL AUTO_INCREMENT,
   Nome VARCHAR(45) NOT NULL,
   Ano INT NOT NULL,
   Diretor VARCHAR(45) NOT NULL,
