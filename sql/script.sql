@@ -16,16 +16,13 @@ CREATE TABLE Filme (
 ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS Cadastro (
-  idCadastro INT NOT NULL,
+  idCadastro INT NOT NULL AUTO_INCREMENT,
   Nome VARCHAR(45) NOT NULL,
   nota INT NOT NULL,
   comentario VARCHAR(45) NOT NULL,
   idFilme INT NOT NULL,
   PRIMARY KEY (idCadastro),
-  INDEX Cadastro_Filme_idx (idFilme ASC) VISIBLE,
   CONSTRAINT Cadastro_Filme
     FOREIGN KEY (idFilme)
     REFERENCES cinemystik.Filme (idFilme)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
 ENGINE = InnoDB;

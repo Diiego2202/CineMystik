@@ -1,57 +1,99 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="/public/avaliar.css" />
+<head>
+    <link rel="stylesheet" href="/public/avaliar.css" />
 </head>
-<div class="">
-    <h1>aaaaaa</h1>
-<h1>aaaaaa</h1>
-<h1>aaaaaa</h1>
-<p>Nome:</p>
-<input type="text" id="inputNome" placeholder="Nome">
-<p>Comentário</p>
-<input type="text" id="inputComentario" placeholder="Comentário">
-<p>Nota</p>
-<input type="number" id="inputNota" placeholder="Nota">
-<p>Idfilme</p>
-<input type="number" id="inputIdfilme">
 
-<button type="button" id="botaoAvaliar">Avaliar</button>
+<div class="margem">
+
+<form id="form">
+	<div>
+		<label for="nome">Nome</label>
+		<input type="text" id="nome" name="nome" maxlength="50" />
+	</div>
+
+	<div>
+		<label for="nota">Nota</label>
+		<input type="number" id="nota" name="nota" />
+	</div>
+
+	<div>
+		<label for="comentario">Comentario</label>
+		<input type="text" id="comentario" name="comentario" maxlength="50" />
+	</div>
+
+    <div>
+		<label for="idFilme">idFilme</label>
+		<input type="number" id="idFilme" name="idFilme" />
+	</div>
+
+	<div>
+		<button type="submit">Avaliar</button>
+	</div>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/public/js/fetch.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/localization/messages_pt_BR.min.js"></script>
 
 <script type="text/javascript">
-    let inputNome = document.getElementById("inputNome");
-    let inputComentario = document.getElementById("inputComentario");
-    let inputNota = document.getElementById("inputNota");
-    let botaoAvaliar = document.getElementById("botaoAvaliar");
-    let inputIdfilme = document.getElementById("inputIdfilme");
 
-    function avaliar(){
-        //let texto = '';
-        let nota = parseInt(inputNota.value);
-        let idfilme = parseInt(inputIdfilme.value);
-        
-        
-        if(isNaN(nota) || nota>5 || nota<0){
-            window.alert("Nota inválida! 0 - 5");
-            return;
-        }
+	$("#form").validate({
+		rules: {
+			// Aqui o que vale é o name, não o id!
+			nome: {
+				required: true,
+				minlength: 3
+			},
+            nota: {
+				required: true
+			},
+			comentario: {
+				required: true
+			},
+			idFilme: {
+				required: true
+			}
+		},
 
-        if(isNaN(idfilme)){
-            window.alert("Id invalido! insira um número!");
-            return;
-        }
+		submitHandler: function (form) {
+			// Não pode simplesmente fazer submitHandler: criarPessoa, porque criarPessoa() é async... :(
+            cadastrarAvaliacao(form);
+		}
+	});
 
+	async function cadastrarAvaliacao(form) {
+		// Vamos prevenir cliques duplos/acidentais :)
+		if (fetchAtivo) {
+			return;
+		}
 
-        window.alert(inputNome.value + '\n' + inputComentario.value + '\n' + inputNota.value);
-    }
-    botaoAvaliar.onclick = avaliar;
+		let opcoes = {
+			method: "POST",
+			// Esta forma não depende do jQuery, não precisa configurar o header e
+			// ainda permite o envio de arquivos! Mas precisa de uma linha de configuração
+			// a mais do lado do Node.js!
+		    body: new FormData(form)
+		};
+
+		try {
+			let response = await fetch("/cadastrarAvaliacao", opcoes);
+
+			if (response.ok) {
+				// Limpa os campos para facilitar a criação da próxima pessoa.
+				form.reset();
+				// Limpa os erros e sucessos.
+				$(form).validate().resetForm();
+
+				alert("Avaliação cadastrada com sucesso!");
+			} else {
+				alert("Erro ao cadastras a avaliação!");
+			}
+		} catch (ex) {
+			alert("Erro de rede: " + ex.message);
+		}
+	}
 </script>
-
-<div>
-    <h1> <%= cadastro[0].idCadastro %> </h1>
-    <h1> <%= cadastro[0].nome %> </h1>
-    <h1> <%= cadastro[0].nota %> </h1>
-    <h1> <%= cadastro[0].comentario %> </h1>
-    <h1> <%= cadastro[0].idFilme %> </h1>
-</div>
 
 </div> 
