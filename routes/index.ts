@@ -10,12 +10,12 @@ class IndexRoute {
 		res.render("index/sobre");
 	}
 
-	public async cadastro(req: app.Request, res: app.Response) {
-		res.render("index/cadastro");
+	public async avaliar(req: app.Request, res: app.Response) {
+		res.render("index/avaliar");
 	}
 
-	public async homepage(req: app.Request, res: app.Response) {
-		res.render("index/homepage");
+	public async filme_do_dia(req: app.Request, res: app.Response) {
+		res.render("index/filme_do_dia");
 	}
 
 	public async galeria(req: app.Request, res: app.Response) {
