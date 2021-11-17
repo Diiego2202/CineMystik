@@ -33,28 +33,28 @@ class IndexRoute {
 		res.render("index/galeria", opcoes);
 	}
 
-	public async avaliacoes(req: app.Request, res: app.Response) {
+	
+
+
+	public async avaliar(req: app.Request, res: app.Response) {
 		// Mais para frente iremos melhorar os tipos, para não usar any[] :)
-		let cadastro: any[];
+		let filme: any[];
 
 		await app.sql.connect(async (sql) => {
 
 			// Todas os comandos SQL devem ser executados aqui dentro do app.sql.connect().
 
-			cadastro = await sql.query("SELECT idCadastro, nome, nota, comentario, idFilme FROM Cadastro");
+			filme = await sql.query("SELECT idFilme, nome, ano, diretor, sinopse, genero, subgenero FROM filme ORDER BY nome");
 
 		});
 		
-		let dados = {
-			cadastro: cadastro
+		let opcoes = {
+			filme: filme
 		};
 
-		res.render("index/avaliar", dados);
+		res.render("index/avaliar", opcoes);
 	}
 
-	public async avaliar(req: app.Request, res: app.Response) {
-		res.render("index/avaliar");
-	}
 
 	@app.http.post()
 	@app.route.formData()
@@ -105,7 +105,6 @@ class IndexRoute {
 
 		res.json(true);
 	}
-
 }
 
 export = IndexRoute;
