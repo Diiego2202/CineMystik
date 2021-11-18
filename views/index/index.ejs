@@ -4,6 +4,19 @@
 </head> 
 	<title>CineMystic</title>
     <body class="bg-white">
+        
+        <div class="filme">
+            <section>
+                
+                <img src="public/img/KeX0g7" id="Tela">
+                <img src="public/img/Assento.png" id="Assento">
+                <img src="public/img/Cortinadireita.png" id="Cortinadireita">
+                <img src="public/img/Cortinaesquerda.png" id="Cortinaesquerda">
+                <h2 id="Texto">Cinemystik</h2>
+                
+            </section>
+        </div>
+    
         <div>
             <div class="container margin-top-7">
                 <div class="row">
@@ -32,4 +45,24 @@
 
             </div>
         </div>
+
+        <script type="text/javascript">
+            
+            let Tela = document.getElementById("Tela");
+            let Assento = document.getElementById("Assento");
+            let Cortinadireita = document.getElementById("Cortinadireita");
+            let Cortinaesquerda = document.getElementById("Cortinaesquerda");
+            let Texto = document.getElementById("Texto");
+            
+            window.addEventListener('scroll', function(){
+                var value = window.scrollY;
+                
+                // Tela.style.top = (value + 0.15) + 'px';
+                //Assento.style.top = (value + 0.5) + 'px';
+                Cortinadireita.style.right = (-value * 2.5) + 'px';
+                Cortinaesquerda.style.left = (-value * 2.5) + 'px';
+                //Texto.style.bottom = (value + 1) + 'px';
+                
+            })
+            </script>
     </body>
