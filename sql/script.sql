@@ -6,23 +6,21 @@ USE cinemystik;
 
 CREATE TABLE Filme (
   idFilme INT NOT NULL AUTO_INCREMENT,
-  Nome VARCHAR(45) NOT NULL,
-  Ano INT NOT NULL,
-  Diretor VARCHAR(45) NOT NULL,
-  Sinopse VARCHAR(1500) NOT NULL,
-  Genero VARCHAR(45) NOT NULL,
-  SubGenero VARCHAR(45) NULL,
-  PRIMARY KEY (idFilme))
-ENGINE = InnoDB;
+  nome VARCHAR(45) NOT NULL,
+  ano INT NOT NULL,
+  diretor VARCHAR(45) NOT NULL,
+  sinopse VARCHAR(1500) NOT NULL,
+  genero VARCHAR(45) NOT NULL,
+  subGenero VARCHAR(45) NULL,
+  PRIMARY KEY (idFilme)
+);
 
-CREATE TABLE IF NOT EXISTS Cadastro (
+CREATE TABLE Cadastro (
   idCadastro INT NOT NULL AUTO_INCREMENT,
-  Nome VARCHAR(45) NOT NULL,
+  nome VARCHAR(45) NOT NULL,
   nota INT NOT NULL,
   comentario VARCHAR(45) NOT NULL,
   idFilme INT NOT NULL,
   PRIMARY KEY (idCadastro),
-  CONSTRAINT Cadastro_Filme
-    FOREIGN KEY (idFilme)
-    REFERENCES cinemystik.Filme (idFilme)
-ENGINE = InnoDB;
+  CONSTRAINT Cadastro_Filme FOREIGN KEY (idFilme) REFERENCES cinemystik.Filme (idFilme)
+);

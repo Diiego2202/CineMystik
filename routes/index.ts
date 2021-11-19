@@ -21,6 +21,7 @@ class IndexRoute {
 		await app.sql.connect(async (sql) => {
 
 			// Todas os comandos SQL devem ser executados aqui dentro do app.sql.connect().
+			//let total: number = await sql.scalar("SELECT COUNT(*) from filme");
 
 			filme = await sql.query("SELECT idFilme, nome, ano, diretor, sinopse, genero, subgenero FROM filme ORDER BY nome");
 
@@ -44,7 +45,7 @@ class IndexRoute {
 
 			// Todas os comandos SQL devem ser executados aqui dentro do app.sql.connect().
 
-			filme = await sql.query("SELECT idFilme, nome, ano, diretor, sinopse, genero, subgenero FROM filme ORDER BY nome");
+			filme = await sql.query("SELECT idFilme, nome FROM filme ORDER BY nome");
 
 		});
 		
