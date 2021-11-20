@@ -1,14 +1,13 @@
   <link rel="stylesheet" href="/public/filme_do_dia.css" />
-  <title>Galeria</title>
     <div class="container margin-top-7">
       <div class="row">
         <% for (let j = 0; j < filme.length; j++) { %>
       <div class="col-sm-3">
         <div class="card img-galeria" style="width: 18rem; height: 18rem;">
-          <img class="card-img-top" src="..." alt="Card image cap">
+          <img class="card-img-top" style="height: 15rem;" src="https://coisasdatv.com.br/wp-content/uploads/2021/06/you-netflix-joe-o-que-pode-vir-ai-terceira-temporada-123131_widelg1.jpg" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title"><%= filme[j].nome %></h5>
-            <a href="#" class="btn botao">SAIBA MAIS</a>
+            <h5 class="card-title color-black text-center"><%= filme[j].nome %></h5>
+            <a href="#" class="btn botao width-100">SAIBA MAIS</a>
           </div>
         </div>
       </div>	

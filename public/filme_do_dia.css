@@ -9,6 +9,14 @@ body{
     top: 0; 
 }
 
+.color-black{
+    color: black;
+}
+
+.text-center{
+    text-align: center;
+}
+
 .letras{
    color: black;
    text-decoration:none;
@@ -85,6 +93,10 @@ body{
     border: none;
     box-shadow: 1px 1px 2px #0d0d0d;
     text-decoration: none;
+}
+
+.width-100{
+    width: 100%;
 }
 
 .color-red{
