@@ -9,20 +9,20 @@
 <form id="form" class="container-fluid g-3">
     <div class="col-md-4">
 		<label for="nome" class="form-label">Nome</label>
-		<input type="text" id="nome" name="nome" class="form-control" placeholder="First name" aria-label="First name">
+		<input type="text" id="nome" name="nome" class="form-control" placeholder="Nome do usuário" aria-label="First name">
     </div>
 	<div class="col-4">
 		<label for="inputAddress2" class="form-label">Nota</label>
-		<input type="number" class="form-control" id="nota" name="nota" placeholder="Nota do filme">
+		<input type="number" class="form-control" id="nota" name="nota" placeholder="Nota do filme" max="5" min="0">
 	</div>
     <div class="col-4">
       <label for="inputAddress" class="form-label">Comentário</label>
-      <input type="text" id="comentario" name="comentario" class="form-control" />
+      <input type="text" id="comentario" name="comentario" class="form-control" placeholder="Comentários sobre o filme" />
     </div>
     <div class="col-md-4">
       <label for="idFilme" class="form-label">Filme</label>
       <select id="idFilme" name="idFilme" class="form-select">
-        <option value="" selected>Choose...</option>
+        <option value="" selected>Selecione o filme</option>
         <% for (let i = 0; i < filme.length; i++) { %>
 		<option value="<%= filme[i].idFilme %>"><%= filme[i].nome %></option>
         <% } %>
