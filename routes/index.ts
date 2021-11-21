@@ -11,7 +11,22 @@ class IndexRoute {
 	}
 
 	public async filme_do_dia(req: app.Request, res: app.Response) {
-		res.render("index/filme_do_dia");
+		let filme: any[];
+
+		await app.sql.connect(async (sql) => {
+
+			// Todas os comandos SQL devem ser executados aqui dentro do app.sql.connect().
+			//let total: number = await sql.scalar("SELECT COUNT(*) from filme");
+
+			filme = await sql.query("SELECT nome, ano, diretor, sinopse, genero, subgenero FROM filme");
+
+		});
+		
+		let opcoes = {
+			filme: filme
+		};
+
+		res.render("index/filme_do_dia", opcoes);
 	}
 
 	public async galeria(req: app.Request, res: app.Response) {
@@ -23,7 +38,7 @@ class IndexRoute {
 			// Todas os comandos SQL devem ser executados aqui dentro do app.sql.connect().
 			//let total: number = await sql.scalar("SELECT COUNT(*) from filme");
 
-			filme = await sql.query("SELECT idFilme, nome, ano, diretor, sinopse, genero, subgenero FROM filme ORDER BY nome");
+			filme = await sql.query("SELECT nome, ano, diretor, sinopse, genero, subgenero FROM filme ORDER BY nome");
 
 		});
 		
