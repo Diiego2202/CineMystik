@@ -197,3 +197,27 @@ a:hover{
 .img-galeria{
     margin-bottom: 2rem;
 }
+
+
+
+/* testes do diego */
+
+.alinhado{
+    padding: 40px;
+    color: black;
+    font-size: 20px;
+    background-color: blueviolet;
+}
+
+.colunas{
+    padding-bottom: 30px;
+}   
+
+.fundinho{
+    padding-top: 5px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ffcb3d;
+    max-width: 650px;
+}

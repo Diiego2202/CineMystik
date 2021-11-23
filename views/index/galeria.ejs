@@ -1,4 +1,4 @@
-  <link rel="stylesheet" href="/public/filme_do_dia.css" />
+<link rel="stylesheet" href="/public/filme_do_dia.css" />
     <div class="container margin-top-7">
       <div class="row">
         <% for (let j = 0; j < filme.length; j++) { %>
@@ -7,10 +7,44 @@
           <img class="card-img-top" style="height: 15rem;" src="https://coisasdatv.com.br/wp-content/uploads/2021/06/you-netflix-joe-o-que-pode-vir-ai-terceira-temporada-123131_widelg1.jpg" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title color-black text-center"><%= filme[j].nome %></h5>
-            <a href="#" class="btn botao width-100">SAIBA MAIS</a>
+            <a href="#" class="btn botao width-100" onclick="mostraDetalhes(`${this.id}`);" id='<%= filme[j].idFilme %>'>SAIBA MAIS</a>
           </div>
         </div>
-      </div>	
-        <% } %>
+      <div class="saibamais hide" id="<%= filme[j].idFilme %>">
+      <div class="container">
+            <h3><%= filme[j].nome  %>  </h3>
+            <p><%= filme[j].sinopse  %>  </p>
       </div>
     </div>
+      </div>
+        <% } %>
+      </div></div>
+
+<script>
+let maisArr = [];
+let mais = document.querySelectorAll('.saibamais');
+    console.log(mais)
+    for(let item of mais){
+      maisArr.push(item);
+    }
+  console.log(maisArr);
+
+let botao = document.querySelectorAll('.botao');
+let botaoArr = [];
+  for(let item of botao){
+      botaoArr.push(item.id);
+    }
+  console.log(botaoArr)
+
+  function mostraDetalhes(event){
+    console.log(event)
+    let posicao = botaoArr.indexOf(event)
+    if(mais[posicao].classList.contains('hide')){
+      mais[posicao].classList.remove('hide');
+    }else{
+      mais[posicao].classList.add('hide');
+    }
+    
+  }
+  </script>
+</div>
