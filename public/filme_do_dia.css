@@ -42,6 +42,10 @@ body{
     display: none;
 }
 
+.show{
+    display: block;
+}
+
 .text-left{
     text-align: left;
 }

@@ -1,24 +1,45 @@
 <link rel="stylesheet" href="/public/filme_do_dia.css" />
     <div class="container margin-top-7">
       <div class="row">
-        <% for (let j = 0; j < filme.length; j++) { %>
-      <div class="col-sm-3">
-        <div class="card img-galeria" style="width: 18rem; height: 18rem;">
-          <img class="card-img-top" style="height: 15rem;" src="https://coisasdatv.com.br/wp-content/uploads/2021/06/you-netflix-joe-o-que-pode-vir-ai-terceira-temporada-123131_widelg1.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title color-black text-center"><%= filme[j].nome %></h5>
-            <a href="#" class="btn botao width-100" onclick="mostraDetalhes(`${this.id}`);" id='<%= filme[j].idFilme %>'>SAIBA MAIS</a>
-          </div>
-        </div>
-      <div class="saibamais hide" id="<%= filme[j].idFilme %>">
-      <div class="container">
-            <h3><%= filme[j].nome  %>  </h3>
-            <p><%= filme[j].sinopse  %>  </p>
+        <% let j = 0;  %>
+          <% do{ %> 
+            <% for(let i = 0; i <4; i++){ %> 
+              <% if(filme[j+i] != null){ %> 
+              <div class="col-sm-3">
+                <div class="card img-galeria" style="width: 18rem; height: 18rem;">
+                  <img class="card-img-top" style="height: 15rem;" src="https://coisasdatv.com.br/wp-content/uploads/2021/06/you-netflix-joe-o-que-pode-vir-ai-terceira-temporada-123131_widelg1.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title color-black text-center"><%= filme[j+i].nome %></h5>
+                    <a class="btn botao width-100" onclick="mostraDetalhes(`${this.id}`);" id='<%= filme[j+i].idFilme %>'>SAIBA MAIS</a>
+                  </div>
+                </div>
+                </div>
+
+              <% } }%>
+              <% for(let i = 0; i <4; i++){ %> 
+                <% if(filme[j+i] != null){ %> 
+              <div class="saibamais hide" id="<%= filme[j+i].idFilme %>">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h3 style ="font-size: 1.8rem;"><%= filme[j+i].nome  %>  </h3>
+                      <p style ="font-size: 1.2rem;"><%= filme[j+i].sinopse  %>  </p>
+                    </div>
+                    <div class="col-sm-6">
+                      <img style="max-width: 100%;" src="https://coisasdatv.com.br/wp-content/uploads/2021/06/you-netflix-joe-o-que-pode-vir-ai-terceira-temporada-123131_widelg1.jpg">
+                    </div>
+                  </div>  
+                </div>
+              </div>
+              <% } }%>
+              <% j = j + 4%> 
+
+          <% if(j%4 == 0){ %>
+            </div>
+            <div class="row">
+          <% } %> 
+          <% }while(j<filme.length) %> 
       </div>
-    </div>
-      </div>
-        <% } %>
-      </div></div>
 
 <script>
 let maisArr = [];
@@ -39,12 +60,21 @@ let botaoArr = [];
   function mostraDetalhes(event){
     console.log(event)
     let posicao = botaoArr.indexOf(event)
-    if(mais[posicao].classList.contains('hide')){
-      mais[posicao].classList.remove('hide');
-    }else{
-      mais[posicao].classList.add('hide');
+
+    for(let i = 0; i<mais.length; i++){
+      if(mais[i].classList.contains('show') && mais[i] != mais[posicao]){
+      mais[i].classList.remove('show');
+      mais[i].classList.add('hide');
+      }
     }
     
+    if(mais[posicao].classList.contains('hide')){
+      mais[posicao].classList.remove('hide');
+      mais[posicao].classList.add('show');
+    }else{
+      mais[posicao].classList.remove('show');
+      mais[posicao].classList.add('hide');
+    }
   }
   </script>
 </div>
