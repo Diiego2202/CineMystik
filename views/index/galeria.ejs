@@ -7,13 +7,20 @@
           <img class="card-img-top" style="height: 15rem;" src="https://coisasdatv.com.br/wp-content/uploads/2021/06/you-netflix-joe-o-que-pode-vir-ai-terceira-temporada-123131_widelg1.jpg" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title color-black text-center"><%= filme[j].nome %></h5>
-            <a href="#" class="btn botao width-100">SAIBA MAIS</a>
+            <a href="#" class="btn botao width-100" onclick="mostraDetalhes();" id="botao<% filme[j].idFilme %> ">SAIBA MAIS</a>
           </div>
         </div>
-      </div>	
+      <div class="saibamais hide" id="saibamais">
+      <div class="container">
+            <h3><%= filme[j].nome  %>  </h3>
+            <p><%= filme[j].sinopse  %>  </p>
+      </div>
+    </div>
+      </div>
         <% } %>
       </div>
     </div>
+
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -37,4 +44,16 @@
       </div>
     </div>
   </div>
-</div>  
+</div>
+<script>
+  let mais = document.getElementById('saibamais');
+  console.log(mais);
+  function mostraDetalhes(){
+     if(mais.classList.contains('hide')){
+       mais.classList.remove('hide');
+     }else{
+     mais.classList.add('hide');
+     }
+    
+  }
+</script>
