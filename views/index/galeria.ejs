@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/public/filme_do_dia.css" />
-    <div class="container margin-top-7">
+    <div class="container-fluid margin-top-7">
       <div class="row">
         <% let j = 0;  %>
           <% do{ %> 
@@ -19,7 +19,7 @@
               <% for(let i = 0; i <4; i++){ %> 
                 <% if(filme[j+i] != null){ %> 
               <div class="saibamais hide" id="preview<%= filme[j+i].idFilme %>">
-                <div class="container">
+                <div class="container-fluid">
                   <div class="row">
                     <div class="col-sm-6">
                       <h3 style ="font-size: 1.8rem;"><%= filme[j+i].nome  %>  </h3>
