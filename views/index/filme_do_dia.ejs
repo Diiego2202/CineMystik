@@ -6,21 +6,23 @@
     <% i = Math.floor((Date.now() - (3 * 60 * 60 * 1000)) / (24 * 60 * 60 * 1000)) % filme.length %> 
 
     <div class="container-fluid text-center block fundo1">
-            <div class="title">
-                <h1 class="titulo-1 color-white transition">FILME DO DIA</h1>
-            </div>
-            <div class="container-fluid ">
-                <div class="bg-black bg-opacity-50">
-                    <h1 class="titulo-2 centered color-white"> <%= filme[i].nome %> </h1>
-                    <hr class="centered">
-                    <p> <%= filme[i].sinopse %>  </p>
-                    <div class="centered">
-                        <a href="" id="filmeurl" class="botao" >
-                            <i class="fas fa-info-circle padding-10"></i>   MAIS INFORMAÇÕES
-                        </a>
-                    </div>
+        <div class="container-fluid">
+            <div class="row justify-content-center colunas">
+                <div class="bg-black bg-opacity-50 espreme rounded">
+                    <h1 class="titulo-1 color-white transition">FILME DO DIA</h1>
                 </div>
             </div>
+            <div class="row justify-content-center">
+                <div class="bg-black bg-opacity-50 espreme rounded padding-10">
+                    <h1 class="titulo-2 centered color-white"><%= filme[i].nome %> (<%= filme[i].ano %>)</h1>
+                    <div class="centered">
+                        <p><%= filme[i].genero %> - <%= filme[i].subgenero %></p>
+                    </div>
+                    <hr class="centered">
+                    <p> <%= filme[i].sinopse %>  </p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="container-fluid text-center random color-white">
@@ -35,37 +37,20 @@
 
     <hr>
 
-    <div class="container-fluid alinhado">
-        <div class="row">
-            <div class="col-md-6">
-                <p class="text-center"><img src="/public/img/poster.jpg" alt="poster" width="400" class=" rounded"></p>
-            </div>
-            <div class="col-md-6">
-                <div class="row colunas justify-content-center">
-                    <div class="fundinho rounded">
-                        <h1> <%= filme[i].nome %> </h1>
-                    </div>
-                </div>            
-                <div class="row justify-content-center">
-                    <div class="fundinho rounded">
-                        <p> <%= filme[i].sinopse %> </p>
-                    </div>
-                </div> 
-            </div>
-        </div>              
-    </div>
-
-    <hr>
-
     <% j = Math.floor(Math.random() * (filme.length - 0 + 1)) + 0 %> 
     <div class="container-fluid alinhado">
         <div class="row">
             <div class="col-md-6">
-                <div class="row colunas justify-content-center">
+                <div class="row colunas text-center justify-content-center">
                     <div class="fundinho rounded">
-                        <h1> <%= filme[j].nome %> </h1>
+                        <h1> <%= filme[i].nome %> (<%= filme[i].ano %>) </h1>
                     </div>
-                </div>            
+                </div>  
+                <div class="row colunas text-center justify-content-center">
+                    <div class="fundinho rounded">
+                        <h1><%= filme[j].genero %> | <%= filme[j].subgenero %> </h1>
+                    </div>
+                </div>             
                 <div class="row justify-content-center colunas">
                     <div class="fundinho rounded">
                         <p> <%= filme[j].sinopse %> </p>

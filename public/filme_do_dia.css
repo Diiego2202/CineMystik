@@ -225,3 +225,8 @@ a:hover{
     background-color: #ffcb3d;
     max-width: 650px;
 }
+
+.espreme{
+    max-width: 800px;
+    text-align: center;
+}
