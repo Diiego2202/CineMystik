@@ -7,7 +7,7 @@
               <% if(filme[j+i] != null){ %> 
               <div class="col-sm-3">
                 <div class="card img-galeria" >
-                  <img class="card-img-top" style="max-width: 100%;" src="https://coisasdatv.com.br/wp-content/uploads/2021/06/you-netflix-joe-o-que-pode-vir-ai-terceira-temporada-123131_widelg1.jpg" alt="Card image cap">
+                  <img class="card-img-top" style="max-width: 100%;" src="/public/img/filmes/<%= filme[j+i].idFilme %>.jpg" alt="Card image cap">
                   <div class="card-body">
                     <h5 class="card-title color-black text-center"><%= filme[j+i].nome %></h5>
                     <a class="btn botao width-100" onclick="mostraDetalhes('preview<%= filme[(j+i)].idFilme %>');">SAIBA MAIS</a>
@@ -27,7 +27,7 @@
                       <p style ="font-size: 1.2rem;"><%= filme[j+i].sinopse  %>  </p>
                     </div>
                     <div class="col-sm-6">
-                      <img style="max-width: 100%;" src="https://coisasdatv.com.br/wp-content/uploads/2021/06/you-netflix-joe-o-que-pode-vir-ai-terceira-temporada-123131_widelg1.jpg">
+                      <img style="max-width: 100%;" src="/public/img/filmes/<%= filme[j+i].idFilme %>.jpg" />
                     </div>
                   </div>  
                 </div>
