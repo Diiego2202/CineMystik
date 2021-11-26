@@ -140,13 +140,6 @@ class IndexRoute {
 			return;
 		}
 
-		filme.idFilme = parseInt(filme.idFilme);
-		if (isNaN(filme.idFilme)) {
-			res.status(400);
-			res.json("Id inválido");
-			return;
-		}
-
 		if (!filme.Nome) {
 			res.status(400);
 			res.json("Nome inválido");
@@ -157,12 +150,6 @@ class IndexRoute {
 		if (isNaN(filme.Ano)) {
 			res.status(400);
 			res.json("Ano inválido");
-			return;
-		}
-
-		if (!filme.Diretor) {
-			res.status(400);
-			res.json("Diretor inválido");
 			return;
 		}
 
@@ -206,7 +193,7 @@ class IndexRoute {
 
 			await sql.query("INSERT INTO filme (idFilme, Nome, Ano, Diretor, Sinopse, Genero, SubGenero) VALUES (?, ?, ?, ?, ?, ?, ?);", [filme.idFilme, filme.Nome, filme.Ano, filme.Diretor, filme.Sinopse, filme.Genero, filme.SubGenero]);
 
-			//filme.idFilme = await sql.scalar("SELECT last_insert_id()") as number;
+			filme.idFilme = await sql.scalar("SELECT last_insert_id()") as number;
 
 			await app.fileSystem.saveUploadedFile("/public/img/filmes/" + filme.idFilme + ".jpg", req.uploadedFiles.Imagem);
 
