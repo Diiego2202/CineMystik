@@ -77,7 +77,7 @@ section img {
 }
 
 .filme {
-    background-image: url('img/KeX0g7.gif');
+    background-color: #d4c59e;
     background-size: cover;
     background-position: center;
 }
@@ -116,7 +116,7 @@ section img {
 }
 
 .counter-box.colored {
-    background: #3acf87
+    background: #ffca3d;
 }
 
 .counter-box.colored p,
