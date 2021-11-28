@@ -1,11 +1,46 @@
-.centralizar{
-    text-align: center;
-}
-.teste{
-    text-align: right;
-    background-color: blue;
-}
-
 body{
     color: #f0f0f0;
+}
+
+.alinhado{
+    padding: 40px;
+    color: black;
+    font-size: 20px;
+}
+
+.colunas{
+    padding-bottom: 30px;
+}   
+
+.fundinho{
+    padding-top: 5px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ffcb3d;
+    max-width: 650px;
+    min-height: 150px;
+}
+
+.espreme{
+    max-width: 800px;
+    text-align: center;
+}
+
+.margem{
+    margin-top: 80px;
+    min-height: 100vh;
+}
+
+.margem2{
+    margin-top: 50px;
+    min-height: 100vh;
+}
+
+.alto{
+    min-height: 330px;
+}
+
+.alturaFoto{
+    min-height: 466px;
 }

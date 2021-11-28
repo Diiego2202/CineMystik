@@ -25,9 +25,7 @@ body{
 
 .fundo1{
     margin-top: 80px;
-    background-image: url(https://cdn.tlc-massive.com/shain/v1/dataservice/ResizeImage/$value?Format=%27png%27&Quality=85&ImageId=%27234319.png%27&ImageUrl=%27234319.png%27&EntityType=%27Item%27&EntityId=%2721151%27&Width=1920&Height=1080&device=web_browser&subscriptions=Anonymous);
-    min-height: 100vh; 
-
+    min-height: 100vh;
 }
 
 .color-white{
@@ -224,4 +222,9 @@ a:hover{
     padding-right: 10px;
     background-color: #ffcb3d;
     max-width: 650px;
+}
+
+.espreme{
+    max-width: 800px;
+    text-align: center;
 }
