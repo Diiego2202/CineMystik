@@ -32,6 +32,9 @@ body{
     color: white;
 }
 
+.no-decoration{
+    list-style: none;
+}
 .margin-top-7{
     margin-top: 7rem;
 }
@@ -185,8 +188,8 @@ a{
 }
 
 a:hover{
-    color:black;
-    text-decoration: none;
+    color: black !important;
+    text-decoration: none !important;
 }
 
 .fundoserie {
