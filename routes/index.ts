@@ -3,7 +3,25 @@
 class IndexRoute {
 
 	public async index(req: app.Request, res: app.Response) {
-		res.render("index/index");
+		let totfilmes: number;
+		let totcadastros: number;
+
+		await app.sql.connect(async (sql) => {
+
+			// Todas os comandos SQL devem ser executados aqui dentro do app.sql.connect().
+			//let total: number = await sql.scalar("SELECT COUNT(*) from filme");
+
+			totfilmes = await sql.scalar("SELECT count(*) FROM filme");
+			totcadastros = await sql.scalar("SELECT count(*) FROM cadastro");
+
+		});
+		
+		let opcoes = {
+			totfilmes: totfilmes,
+			totcadastros: totcadastros
+		};
+
+		res.render("index/index", opcoes);
 	}
 
 	public async sobre(req: app.Request, res: app.Response) {

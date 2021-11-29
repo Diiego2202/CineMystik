@@ -1,6 +1,8 @@
 body{
     color: #f0f0f0;
     font-size: 1.4rem;
+    padding: 15px;
+    margin: 12px;
 }
 
 .font{
@@ -9,47 +11,26 @@ body{
 
 .alinhado{
     padding: 40px;
-    color: black;
-    font-size: 20px;
 }
+
 .margin-top-2{
     margin-top: 2rem;
 }
+
 .colunas{
     padding-bottom: 30px;
 }   
 
 .fundinho{
-    padding-top: 5px;
-    padding-bottom: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: #ffcb3d;
+    padding: 20px;
+    background-color: #00000021;
     max-width: 650px;
-    min-height: 150px;
+    min-height: 350px;
 }
 
 .espreme{
     max-width: 800px;
     text-align: center;
-}
-
-.margem{
-    margin-top: 80px;
-    min-height: 100vh;
-}
-
-.margem2{
-    margin-top: 50px;
-    min-height: 100vh;
-}
-
-.alto{
-    min-height: 330px;
-}
-
-.alturaFoto{
-    min-height: 466px;
 }
 
 .margin-top{
