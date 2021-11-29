@@ -55,3 +55,37 @@ body{
 .margin-top{
     margin-top: 7rem;
 }
+
+.fundo_bloco{
+    padding: 20px;
+    background-color: white;
+    color:black;  
+    width: 400px;
+    height: 400px;
+}
+
+.padd{
+    padding: 25px;
+}   
+
+.fundo1{
+   
+    text-align: center;
+    color: yellow;
+}
+
+.centro{
+    text-align: center;
+    margin: auto;
+}
+.tamanhomax{
+    max-width: 300px;
+    margin: auto;
+}
+
+.paddperfil{
+    padding-bottom: 40px;
+    padding-top:20px ;
+}
+
+
