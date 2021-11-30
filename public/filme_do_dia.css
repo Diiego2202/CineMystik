@@ -100,6 +100,19 @@ body{
     text-decoration: none;
 }
 
+.botaofechar{
+    padding:3px 10px;
+    border-radius: 5px;
+    background-color:#ffca3d;
+    color: black;
+    border: none;
+    box-shadow: 1px 1px 2px #0d0d0d;
+    text-decoration: none;
+    text-align: left;
+    margin-bottom: 75px;
+}
+
+
 .width-100{
     width: 100%;
 }
@@ -201,9 +214,13 @@ a:hover{
 
 .img-galeria{
     margin-bottom: 2rem;
+
 }
 
-
+.padd{
+    padding: 10px;
+    margin: auto;
+}
 
 /* testes do diego */
 
