@@ -45,7 +45,7 @@ section:before {
     bottom: 0;
     width: 100%;
     height: 100px;
-    background: linear-gradient(to top, #1a1a1a, transparent);
+    background: linear-gradient(to top, black, transparent);
     z-index:10000;
 }
 
@@ -151,3 +151,18 @@ a :hover{
     color: black !important;
     text-decoration: none !important;
 }
+<<<<<<< Updated upstream
+=======
+
+.fundo1 {
+    background-image: url(img/pipocadiferente.png);
+    background-position: center center;
+    background-size: cover;
+    padding: 300px 30px;
+}
+
+.titulo1 {
+    max-width: 50%;
+
+}
+>>>>>>> Stashed changes
