@@ -7,31 +7,20 @@
     <div class="row">
         <div class="col-md-6">
             <div class="row espreme">
-                <p><img src="/public/img/filmedodia.png" alt="" width="500"></p>
+                <h1 style="font-size: 80px; color: white;">Filme de hoje</h1>
             </div>
             <div class="row colunas text-center justify-content-center">
                 <div class="fundinho rounded">
-                    <h1> <%= filme[i].nome %> (<%= filme[i].ano %>) </h1>
-                </div>
-            </div>
-            <div class="row colunas text-center justify-content-center">
-                <div class="fundinho rounded">
-                    <h1>Diretor: <%= filme[i].diretor %> </h1>
-                </div>
-            </div>  
-            <div class="row colunas text-center justify-content-center">
-                <div class="fundinho rounded">
-                    <h1><%= filme[i].genero %> | <%= filme[i].subgenero %> </h1>
-                </div>
-            </div>             
-            <div class="row justify-content-center colunas">
-                <div class="fundinho rounded">
+                    <h1> <%= filme[i].nome %>  (<%= filme[i].ano %>) </h1>
+                    <hr class="justify-content-center">
+                    <h2>Diretor: <%= filme[i].diretor %> </h2>
+                    <h3>Gênero: <%= filme[i].genero %> | Subgênero: <%= filme[i].subgenero %> </h3>
+                    <br>
                     <p> <%= filme[i].sinopse %> </p>
                 </div>
-            </div> 
+             </div>
         </div>
-        
-        <div class="col-md-6">
+        <div class="col-md-6 espreme">
             <p class="text-center"><img src="/public/img/filmes/<%= filme[i].idFilme %>.jpg" alt="posterFilme" width="400" class=" rounded"></p>
         </div>
     </div>              
