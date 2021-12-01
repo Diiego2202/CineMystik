@@ -58,6 +58,7 @@ class IndexRoute {
 	public async galeria(req: app.Request, res: app.Response) {
 		// Mais para frente iremos melhorar os tipos, para não usar any[] :)
 		let filme: any[];
+		let cadastro: any[];
 
 		await app.sql.connect(async (sql) => {
 
@@ -65,11 +66,12 @@ class IndexRoute {
 			//let total: number = await sql.scalar("SELECT COUNT(*) from filme");
 
 			filme = await sql.query("SELECT idFilme, nome, ano, diretor, sinopse, genero, subgenero FROM filme ORDER BY nome");
-
+			cadastro = await sql.query("SELECT idCadastro, nome, nota, comentario, idFilme FROM cadastro");
 		});
 		
 		let opcoes = {
-			filme: filme
+			filme: filme,
+			cadastro: cadastro
 		};
 
 		res.render("index/galeria", opcoes);
@@ -78,17 +80,20 @@ class IndexRoute {
 	public async avaliar(req: app.Request, res: app.Response) {
 		// Mais para frente iremos melhorar os tipos, para não usar any[] :)
 		let filme: any[];
+		let cadastro: any[];
 
 		await app.sql.connect(async (sql) => {
 
 			// Todas os comandos SQL devem ser executados aqui dentro do app.sql.connect().
 
 			filme = await sql.query("SELECT idFilme, nome FROM filme ORDER BY nome");
+			cadastro = await sql.query("SELECT idCadastro, nome, nota, comentario, idFilme FROM cadastro");
 
 		});
 		
 		let opcoes = {
-			filme: filme
+			filme: filme,
+			cadastro: cadastro
 		};
 
 		res.render("index/avaliar", opcoes);

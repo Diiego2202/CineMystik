@@ -1,6 +1,5 @@
-
-    <link rel="stylesheet" href="/public/avaliar.css" />
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="/public/avaliar.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 <form id="form" class="container margin-top-7 margin-bottom g-3 align-middle font">
     <div class="row">
@@ -18,13 +17,13 @@
 	  <textarea type="text" id="comentario" name="comentario" class="form-control" placeholder="Comentários sobre o filme" cols="30" rows="4"></textarea>
     </div>
     <div class="form-group margin-top-1">
-      <label for="idFilme" class="form-label">Filme</label>
-      <select id="idFilme" name="idFilme" class="form-select">
-        <option value="" selected>Selecione o filme</option>
-        <% for (let i = 0; i < filme.length; i++) { %>
-		<option value="<%= filme[i].idFilme %>"><%= filme[i].nome %></option>
-        <% } %>
-    </select>
+    	<label for="idFilme" class="form-label">Filme</label>
+      	<select id="idFilme" name="idFilme" class="form-select">
+			<option value="" selected>Selecione o filme</option>
+			<% for (let i = 0; i < filme.length; i++) { %>
+			<option value="<%= filme[i].idFilme %>"><%= filme[i].nome %></option>
+			<% } %>
+    	</select>
     </div>
     <div class="col-12 margin-top-1 font">
       <button type="submit" class="btn btn-success">Avaliar</button>
@@ -99,3 +98,29 @@
 	}
 </script>
 
+
+<hr>
+
+<div class="form-group margin-top-1">
+	<label for="idFilme" class="form-label">Filme</label>
+	  <select id="idFilme" name="idFilme" class="form-select">
+		<option value="" selected>Selecione o filme</option>
+		<% for (let i = 0; i < filme.length; i++) { %>
+		<option value="<%= filme[i].idFilme %>"><%= filme[i].nome %></option>
+		<% } %>
+	</select>
+</div>
+<div class="col-12 margin-top-1 font">
+	<button type="submit" class="btn btn-success">Avaliar</button>
+</div>
+
+<% for(let j=0; j<cadastro.length;j++){ %> 
+	<% if(cadastro[j].idFilme == 5){ %> 
+		<div>
+			<p>nome: <%= cadastro[j].nome %> </p>
+			<p>nota: <%= cadastro[j].nota %> </p>
+			<p>comentario: <%= cadastro[j].comentario %> </p>
+			<hr>
+		</div>
+	<% } %> 
+<% } %> 
