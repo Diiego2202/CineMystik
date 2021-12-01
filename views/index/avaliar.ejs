@@ -89,12 +89,12 @@
 				// Limpa os erros e sucessos.
 				$(form).validate().resetForm();
 
-				alert("Avaliação cadastrada com sucesso!");
+				Swal.fire("Sucesso!", "Avaliação cadastrada", "success");
 			} else {
-				alert("Erro ao cadastrar a avaliação!");
+				Swal.fire("Erro!", "Ocorreu um erro na avaliação", "error");
 			}
 		} catch (ex) {
-			alert("Erro de rede: " + ex.message);
+			Swal.fire("Erro!", "Erro de rede: " + ex.message, "error");
 		}
 	}
 </script>

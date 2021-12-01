@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="row espreme">
-                <h1 style="font-size: 80px; color: white;">Filme de hoje</h1>
+                <h1 style="font-size: 80px; color: white;">Filme do dia</h1>
             </div>
             <div class="row colunas text-center justify-content-center">
                 <div class="fundinho rounded">
@@ -39,35 +39,23 @@
 <% let j = 1; %> 
 <div class="container-fluid alinhado">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 espreme">
             <p class="text-center"><img src="/public/img/filmes/<%= filme[j].idFilme %>.jpg" alt="poster" width="400" class=" rounded"></p>
         </div>
         <div class="col-md-6">
-            <div class="row colunas text-center justify-content-center">
-                <div class="fundinho rounded">
-                    <h1> <%= filme[j].nome %> (<%= filme[j].ano %>) </h1>
-                </div>
+            <div class="row espreme">
+                <h1 style="font-size: 80px; color: white;">Filme aleatório</h1>
             </div>
             <div class="row colunas text-center justify-content-center">
                 <div class="fundinho rounded">
-                    <h1>Diretor: <%= filme[j].diretor %> </h1>
-                </div>
-            </div>  
-            <div class="row colunas text-center justify-content-center">
-                <div class="fundinho rounded">
-                    <h1><%= filme[j].genero %> | <%= filme[j].subgenero %> </h1>
-                </div>
-            </div>             
-            <div class="row justify-content-center colunas">
-                <div class="fundinho rounded">
+                    <h1> <%= filme[j].nome %>  (<%= filme[j].ano %>) </h1>
+                    <hr class="justify-content-center">
+                    <h2>Diretor: <%= filme[j].diretor %> </h2>
+                    <h3>Gênero: <%= filme[j].genero %> | Subgênero: <%= filme[j].subgenero %> </h3>
+                    <br>
                     <p> <%= filme[j].sinopse %> </p>
                 </div>
-            </div> 
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <button type="button" class="btn btn-warning">TESTE</button>
-                </div>
-            </div>
+             </div>
         </div>
     </div>              
 </div>
