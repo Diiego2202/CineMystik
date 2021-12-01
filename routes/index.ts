@@ -29,15 +29,23 @@ class IndexRoute {
 	}
 
 	public async filme_do_dia(req: app.Request, res: app.Response) {
-		let filme: any[];
+		let filme: any[] = [];
 
 		await app.sql.connect(async (sql) => {
 
+			let total = await sql.scalar("SELECT COUNT(*) FROM filme") as number;
+
 			// Todas os comandos SQL devem ser executados aqui dentro do app.sql.connect().
 			//let total: number = await sql.scalar("SELECT COUNT(*) from filme");
+			let i = Math.floor((Date.now() - (3 * 60 * 60 * 1000)) / (24 * 60 * 60 * 1000)) % total;
 
-			filme = await sql.query("SELECT idFilme, nome, ano, diretor, sinopse, genero, subgenero FROM filme");
+			let dia = await sql.query("SELECT idFilme, nome, ano, diretor, sinopse, genero, subgenero FROM filme ORDER BY idFilme ASC LIMIT ?, 1", [i]);
+			filme.push(dia[0]);
 
+			i = Math.floor(Math.random() * total);
+
+			let surpresa = await sql.query("SELECT idFilme, nome, ano, diretor, sinopse, genero, subgenero FROM filme ORDER BY idFilme ASC LIMIT ?, 1", [i]);
+			filme.push(surpresa[0]);
 		});
 		
 		let opcoes = {

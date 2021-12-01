@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="/public/filme_do_dia.css" />
 </head>   
 
-<% i = Math.floor((Date.now() - (3 * 60 * 60 * 1000)) / (24 * 60 * 60 * 1000)) % filme.length %> 
+<% let i = 0; %> 
 <div class="container-fluid alinhado fundo1">
     <div class="row">
         <div class="col-md-6">
@@ -30,13 +30,13 @@
     <h1 class="title">SURPREENDA-ME</h1>
     <p class="text">Não sabe o que assistir? Experimente nossa função aleatória de filmes!</p>
     <div class="centered">
-        <button class="botao bold" type="button" id="botaoaleatorio">
+        <button class="botao bold" type="button" id="botaoaleatorio" onclick="window.location.reload()">
             <i class="fas fa-random padding-10"></i>   ALEATÓRIO
         </button>
     </div>
 </div>
 
-<% j = Math.floor(Math.random() * (filme.length - 0 + 1)) + 0 %> 
+<% let j = 1; %> 
 <div class="container-fluid alinhado">
     <div class="row">
         <div class="col-md-6">
