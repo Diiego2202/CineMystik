@@ -97,30 +97,3 @@
 		}
 	}
 </script>
-
-
-<hr>
-
-<div class="form-group margin-top-1">
-	<label for="idFilme" class="form-label">Filme</label>
-	  <select id="idFilme" name="idFilme" class="form-select">
-		<option value="" selected>Selecione o filme</option>
-		<% for (let i = 0; i < filme.length; i++) { %>
-		<option value="<%= filme[i].idFilme %>"><%= filme[i].nome %></option>
-		<% } %>
-	</select>
-</div>
-<div class="col-12 margin-top-1 font">
-	<button type="submit" class="btn btn-success">Avaliar</button>
-</div>
-
-<% for(let j=0; j<cadastro.length;j++){ %> 
-	<% if(cadastro[j].idFilme == 5){ %> 
-		<div>
-			<p>nome: <%= cadastro[j].nome %> </p>
-			<p>nota: <%= cadastro[j].nota %> </p>
-			<p>comentario: <%= cadastro[j].comentario %> </p>
-			<hr>
-		</div>
-	<% } %> 
-<% } %> 
