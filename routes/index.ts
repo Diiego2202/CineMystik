@@ -28,7 +28,7 @@ class IndexRoute {
 		res.render("index/sobre");
 	}
 
-	public async filme_do_dia(req: app.Request, res: app.Response) {
+	private async gerarFilmes(aleatorio: boolean): Promise<any[]> {
 		let filme: any[] = [];
 
 		await app.sql.connect(async (sql) => {
@@ -42,11 +42,29 @@ class IndexRoute {
 			let dia = await sql.query("SELECT idFilme, nome, ano, diretor, sinopse, genero, subgenero FROM filme ORDER BY idFilme ASC LIMIT ?, 1", [i]);
 			filme.push(dia[0]);
 
-			i = Math.floor(Math.random() * total);
+			if (aleatorio) {
+				i = Math.floor(Math.random() * total);
 
-			let surpresa = await sql.query("SELECT idFilme, nome, ano, diretor, sinopse, genero, subgenero FROM filme ORDER BY idFilme ASC LIMIT ?, 1", [i]);
-			filme.push(surpresa[0]);
+				let surpresa = await sql.query("SELECT idFilme, nome, ano, diretor, sinopse, genero, subgenero FROM filme ORDER BY idFilme ASC LIMIT ?, 1", [i]);
+				filme.push(surpresa[0]);
+			}
 		});
+
+		return filme;
+	}
+
+	public async filme_do_dia(req: app.Request, res: app.Response) {
+		let filme = await this.gerarFilmes(false);
+		
+		let opcoes = {
+			filme: filme
+		};
+
+		res.render("index/filme_do_dia", opcoes);
+	}
+
+	public async aleatorio(req: app.Request, res: app.Response) {
+		let filme = await this.gerarFilmes(true);
 		
 		let opcoes = {
 			filme: filme

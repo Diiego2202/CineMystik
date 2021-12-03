@@ -18,7 +18,7 @@
     </div>
     <div class="form-group margin-top-1">
     	<label for="idFilme" class="form-label">Filme</label>
-      	<select id="idFilme" name="idFilme" class="form-select">
+      	<select id="idFilme" name="idFilme" class="form-select" onchange="exibirAvaliacoes()">
 			<option value="" selected>Selecione o filme</option>
 			<% for (let i = 0; i < filme.length; i++) { %>
 			<option value="<%= filme[i].idFilme %>"><%= filme[i].nome %></option>
@@ -30,7 +30,7 @@
     </div>
 </form>
 
-
+<div id="divAvaliacoes"></div>
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -40,6 +40,41 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/localization/messages_pt_BR.min.js"></script>
 
 <script type="text/javascript">
+
+	let cadastro = <%- JSON.stringify(cadastro) %>;
+
+	let idFilme = document.getElementById("idFilme");
+	let divAvaliacoes = document.getElementById("divAvaliacoes");
+
+	let expr1 = /\</g, expr2 = /\>/g;
+	function encode(x) {
+		return x.replace(expr1, "&lt;").replace(expr2, "&gt;");
+	}
+
+	function exibirAvaliacoes() {
+		let html = "";
+
+		let id = parseInt(idFilme.value);
+
+		if (!isNaN(id)) {
+			for (let i = 0; i < cadastro.length; i++) {
+				let avaliacao = cadastro[i];
+				if (avaliacao.idFilme !== id) {
+					continue;
+				}
+
+				html += `
+					<div>
+						<h1>${avaliacao.nota}</h1>
+						<p>${encode(avaliacao.nome)}</p>
+						<p>${encode(avaliacao.comentario)}</p>
+					</div>
+				`;
+			}
+		}
+
+		divAvaliacoes.innerHTML = html;
+	}
 
 	$("#form").validate({
 		rules: {
