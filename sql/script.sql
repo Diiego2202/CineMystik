@@ -19,7 +19,7 @@ CREATE TABLE Cadastro (
   idCadastro INT NOT NULL AUTO_INCREMENT,
   nome VARCHAR(45) NOT NULL,
   nota INT NOT NULL,
-  comentario VARCHAR(45) NOT NULL,
+  comentario VARCHAR(100) NOT NULL,
   idFilme INT NOT NULL,
   PRIMARY KEY (idCadastro),
   CONSTRAINT Cadastro_Filme FOREIGN KEY (idFilme) REFERENCES cinemystik.Filme (idFilme)
