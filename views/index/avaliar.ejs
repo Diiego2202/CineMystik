@@ -63,11 +63,12 @@
 					continue;
 				}
 
-				html += `
-					<div>
-						<h1>${avaliacao.nota}</h1>
-						<p>${encode(avaliacao.nome)}</p>
-						<p>${encode(avaliacao.comentario)}</p>
+				html += `	
+					<div class="caixas">
+						<hr>
+						<h1>Nome :${encode(avaliacao.nome)}</h1>
+						<h3 class="amarelo">Nota: ${avaliacao.nota}</h3>
+						<p>Comentário: ${encode(avaliacao.comentario)}</p>
 					</div>
 				`;
 			}
